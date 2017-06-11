@@ -1,36 +1,64 @@
 """Coin estimator practice."""
-cent = 0
-nickel = 0
-dime = 0
-quarter = 0
-halfDollar = 0
-prezDollar = 0
-naDollar = 0
-total = 0
-while True:
-    print("Select your coin type:")
-    coin = input("1 - Cent\n"
-                 "2 - Nickel\n"
-                 "3 - Dime\n"
-                 "4 - Quarter\n"
-                 "5 - Half Dollar\n"
-                 "6 - Presidental Dollar\n"
-                 "7 - Native American Dollar\n")
+print("Select your coin type:")
+coin = input("1 - Cent\n"
+             "2 - Nickel\n"
+             "3 - Dime\n"
+             "4 - Quarter\n"
+             "5 - Half Dollar\n"
+             "6 - Presidental Dollar\n"
+             "7 - Native American Dollar\n")
+print("")
+weight = input("Enter total weight of coins:\n")
+
+
+def estimate(coin, weight):
+    """Math on estimating coins."""
     if coin == str(1):
-        cent = input("Enter the weight of Pennies:\n")
-        total = float(cent) / 2.5000
-        print("The total number of coins is " + str(total))
+        total = float(weight) / 2.500
     elif coin == str(2):
-        print("This is a Nickel")
+        total = float(weight) / 5.000
     elif coin == str(3):
-        print("This is a Dime")
+        total = float(weight) / 2.268
     elif coin == str(4):
-        print("This is a Quarter")
+        total = float(weight) / 5.670
     elif coin == str(5):
-        print("This is a Half Dollar")
+        total = float(weight) / 11.340
     elif coin == str(6):
-        print("This is a Presidental Dollar")
+        total = float(weight) / 8.1
     elif coin == str(7):
-        print("This is a Native American Dollar")
+        total = float(weight) / 8.1
     else:
-        break
+        exit
+    return(int(total))
+
+
+total = estimate(coin, weight)
+
+
+def roll(coin, total):
+    """Estimate number of rolls required."""
+    if coin == str(1):
+        roll = total / 50
+    elif coin == str(2):
+        roll = total / 40
+    elif coin == str(3):
+        roll = total / 50
+    elif coin == str(4):
+        roll = total / 40
+    elif coin == str(5):
+        roll = total / 20
+    elif coin == str(6):
+        roll = total / 25
+    elif coin == str(7):
+        roll = total / 20
+    else:
+        exit
+    print(int(roll))
+
+
+print()
+print()
+print("The total number of coins is:")
+print(estimate(coin, weight))
+print("The number of rolls required is:")
+roll(coin, total)
