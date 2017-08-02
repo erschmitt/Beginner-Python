@@ -1,6 +1,6 @@
 print("what coin do you have?")
 type_of_coin = input("1.penny\n2.nickel\n3.dime\n4.quarter:  ")
-print("how much do your coins weigh?")
+print("how much do your coins weigh(in grams)?")
 coin_weight = input("")
 def determin_coin(x, y):
     total = int(coin_weight)
