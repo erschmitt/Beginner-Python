@@ -1,20 +1,20 @@
-cost = float(input("how much did the item cost? "))
-money_given = float(input("how much money did you give? "))
-cost = int(cost * 100)
-money_given = int(money_given * 100)
+print("Change Calclator")
 quarter = 25
 dime = 10
 nickel = 5
 penny = 1
-print(cost)
-print(money_given)
-money_back = int(money_given) - int(cost)
-print(money_back)
-figurequarter = money_back % quarter
-print(figurequarter)
-figuredime = figurequarter % dime
-print(figuredime)
-figurenickel = figuredime % nickel
-print(figurenickel)
-figurepenny = figurenickel % penny
-print(figurepenny)
+moneygiven = input("Enter how much money given: ")
+citem = input("How much did the item cost?: ")
+moneygiven = int(float(moneygiven) * 100)
+citem = int(float(citem) * 100)
+moneyback = moneygiven - citem
+qmb = moneyback // quarter
+partialtotal = moneyback - qmb * quarter
+dmb = partialtotal // dime
+dpartialtotal = partialtotal - dmb * dime
+nmb = dpartialtotal // nickel
+npartialtotal = dpartialtotal - nmb * nickel
+pmb = npartialtotal // penny
+ppartialtotal = npartialtotal - pmb * penny
+
+print("You need %s quarters, %s dimes, %s nickels, %s pennies." % (qmb, dmb, nmb, pmb))
